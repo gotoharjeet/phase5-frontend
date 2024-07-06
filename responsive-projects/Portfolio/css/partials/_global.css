@@ -1,1 +1,29 @@
 
+.title-text
+{
+    font:normal  50px/72px var(--roboto);
+}
+
+.title-uppercase
+{
+    text-transform: uppercase;
+}
+
+/* Button */
+.button
+{
+    padding: .8rem 2.2rem;
+    font:normal 500 16px/20px var(--roboto);
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 4px;
+}
+.button.primary-button
+{
+    background: var(--gradient-color);
+    background-clip: padding-box;
+    color: whitesmoke;
+    transition:6s ease;
+    box-shadow: var(--box-shadow);
+}
+/* end of Button */
