@@ -1,0 +1,73 @@
+@import url(../css/fonts.css);
+@import url(../css/partials/_variables.css);
+@import url(../css/partials/_global.css);
+
+/* Start Navigation */
+
+.header_area .main-menu .navbar .navbar-brand
+{
+    padding: 0 2rem 0 5rem;
+}
+
+.header_area .main-menu .navbar
+{
+    padding: 1rem 10rem;
+}
+
+.header_area .main-menu .nav-item .nav-link 
+{
+    font: normal 500 15px/2px var(--roboto);
+    /* font-family: var(--roboto); */
+    text-transform: uppercase;
+    /* font-weight: 500; */
+    padding: .7rem;
+    color:var(--title-color);
+
+}
+
+.header_area .main-menu .navbar-nav .active a
+{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header_area .main-menu .navbar-nav a:hover
+{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* End of Navigation */
+
+/* Start Banner */
+.site-main .site-banner 
+{
+    background: url(../img/banner/home-banner.png) no-repeat 0% 50%;
+    /* background-position: 0% 50%; */
+}
+
+.site-main .site-banner h3
+{
+    padding-top: 35%;
+    font-weight: 500;
+}
+
+.site-main .site-banner h3::after
+{
+    content: "";
+    height: 2px;
+    width: 18vw;
+    background: black;
+    display: inline-block;
+    margin-left: 5%;
+    
+}
+/* End of Baneer */
+
+
+
