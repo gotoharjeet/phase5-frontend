@@ -70,4 +70,19 @@ p.para{
 {
     font-family: var(--roboto);
 }
+
+button:focus,
+button:active
+button:hover
+.btn:active,
+.btn.active
+{
+    outline: 0px !important;
+    box-shadow: none !important;
+}
+
+.title-h1
+{
+    font: normal bold 39px/40px var(--roboto);
+}
 /* end of About area */
