@@ -22,7 +22,13 @@ export class SearchComponent implements OnInit {
   search():void
   {
     if(this.searchItem)
-      this.router.navigateByUrl('/search/'+this.searchItem)
+    {
+      // this.router.navigateByUrl('/search/'+this.searchItem)
+
+          // this.router.navigate(['/search'], { queryParams: { searchItem: this.searchItem } });
+          this.router.navigateByUrl('search/'+this.searchItem);
+    }
+      
   }
 
 }

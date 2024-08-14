@@ -7,7 +7,7 @@ import { Foods } from 'src/app/shared/models/food';
     providedIn: 'root'
 })
 export class FoodService {
-
+    // tagCount!:number;
     constructor() { }
 
    
@@ -18,21 +18,51 @@ export class FoodService {
         else
             return this.getAll().filter(food => food.tags?.includes(tag));
     }
-    getAllTag():Tag[]
-    {
-        return[
-            {name: 'All',count:14},
-            {name: 'FastFood',count:4},
-            {name: 'Pizza',count:2},
-            {name: 'Lunch',count:3},
-            {name: 'Dinner',count:2},
-            {name: 'Pie',count:1},
-            {name: 'Chinese',count:9},
-            {name: 'Indian',count:1},
-            {name: 'Rice',count:1},
-            {name: 'Mexicon',count:10}
-        ]
+    // getAllTag():Tag[]
+    // {
+
+       
+    //     return[
+    //         // {name: 'All',count:this.getAllTag().length},
+    //         // {name: 'FastFood',count:4},
+    //         // {name: 'Pizza',count:2},
+    //         // {name: 'Lunch',count:3},
+    //         // {name: 'Dinner',count:2},
+    //         // {name: 'Pie',count:1},
+    //         // {name: 'Chinese',count:9},
+    //         // {name: 'Indian',count:1},
+    //         // {name: 'Rice',count:1},
+    //         // {name: 'Mexicon',count:10}
+    //     ]
+    // }
+
+
+    getAllTag(): Tag[] {
+        const foodItems = this.getAll();
+        const tagCountMap: { [key: string]: number } = {};
+
+        // Count occurrences of each tag
+        foodItems.forEach(food => {
+            food.tags?.forEach(tag => {
+                tagCountMap[tag] = (tagCountMap[tag] || 0) + 1;
+            });
+        });
+
+        // Create the array of tags with counts
+        const tags: Tag[] = Object.keys(tagCountMap).map(tagName => ({
+            name: tagName,
+            count: tagCountMap[tagName]
+        }));
+
+        // Include 'All' tag with count as total number of food items
+        tags.unshift({
+            name: 'All',
+            count: foodItems.length
+        });
+
+        return tags;
     }
+    
     getAll(): Foods[] {
         return [
             // '/assets/images/ButterChicken.png',

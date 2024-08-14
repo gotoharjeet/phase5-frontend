@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit{
     // foods:Foods[]=[];
     foods:Foods[]=[];
+    tags: { name: string, count: number }[] = [];
     constructor(private fs:FoodService,private route:ActivatedRoute)
     {
 
@@ -27,9 +28,9 @@ export class HomeComponent implements OnInit{
             this.foods=this.fs.getAllFoodByTag(params['tag']);
           else
             this.foods=this.fs.getAll();
-        } ) 
+        } );
           
-        
+        // this.tags = this.fs.getAllTag();
         
       }
 
