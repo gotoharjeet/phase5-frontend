@@ -11,6 +11,10 @@ export class FoodService {
     constructor() { }
 
    
+    getFoodById(id:number):Foods
+    {
+        return this.getAll().find(food => food.id == id)!;
+    }
     getAllFoodByTag(tag:string):Foods[] 
     {
         if(tag == 'All')
@@ -23,16 +27,16 @@ export class FoodService {
 
        
     //     return[
-    //         // {name: 'All',count:this.getAllTag().length},
-    //         // {name: 'FastFood',count:4},
-    //         // {name: 'Pizza',count:2},
-    //         // {name: 'Lunch',count:3},
-    //         // {name: 'Dinner',count:2},
-    //         // {name: 'Pie',count:1},
-    //         // {name: 'Chinese',count:9},
-    //         // {name: 'Indian',count:1},
-    //         // {name: 'Rice',count:1},
-    //         // {name: 'Mexicon',count:10}
+    //         {name: 'All',count:this.getAllTag().length},
+    //         {name: 'FastFood',count:4},
+    //         {name: 'Pizza',count:2},
+    //         {name: 'Lunch',count:3},
+    //         {name: 'Dinner',count:2},
+    //         {name: 'Pie',count:1},
+    //         {name: 'Chinese',count:9},
+    //         {name: 'Indian',count:1},
+    //         {name: 'Rice',count:1},
+    //         {name: 'Mexicon',count:10}
     //     ]
     // }
 
